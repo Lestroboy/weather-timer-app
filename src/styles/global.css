@@ -1,0 +1,323 @@
+/* Reset & global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #222;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #fafafa;
+}
+
+/* App container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 95vh;
+  width: 100%;
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 40px;
+  height: 80px;
+}
+
+/* Dark Mode Toggle Button */
+.theme-toggle-btn {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Light mode */
+body:not(.dark) .theme-toggle-btn {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Dark mode */
+body.dark .theme-toggle-btn {
+  background-color: #444;
+  color: #fafafa;
+}
+
+.theme-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.15);
+}
+
+/* Dashboard layout */
+.dashboard-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  flex: 1;
+  padding: 0 40px;
+  gap: 20px;
+  height: calc(100vh - 80px);
+}
+
+/* Left & right sections */
+.weather-section,
+.timer-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Card styles for temperature and timer */
+.temperature-container,
+.timer-container {
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode cards */
+body.dark .temperature-container,
+body.dark .timer-container {
+  background-color: #222;
+}
+
+/* Temperature / AQI text */
+.temperature-value {
+  font-size: 5rem;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.aqi-value {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.aqi-description {
+  font-size: 1.3rem;
+  color: #555;
+  text-align: center;
+  line-height: 1.4;
+}
+
+body.dark .aqi-description {
+  color: #ccc;
+}
+
+/* Weather icon */
+.weather-icon {
+  font-size: 6rem;
+  margin-bottom: 20px;
+}
+
+.weather-icon .wi-day-sunny {
+  color: #ffb74d;
+}
+.weather-icon .wi-cloudy {
+  color: #90a4ae;
+}
+.weather-icon .wi-rain,
+.weather-icon .wi-sprinkle {
+  color: #4fc3f7;
+}
+.weather-icon .wi-thunderstorm {
+  color: #f44336;
+}
+.weather-icon .wi-snow {
+  color: #b3e5fc;
+}
+.weather-icon .wi-fog {
+  color: #b0bec5;
+}
+.weather-icon .wi-na {
+  color: #9e9e9e;
+}
+
+/* Timer text & buttons */
+.timer-display {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.timer-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  padding: 12px 28px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 2px rgb(255, 255, 255);
+}
+
+.start-btn {
+  background-color: #4caf50;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.6);
+  color: #fff;
+}
+.start-btn:hover {
+  background-color: #45a049;
+}
+
+.stop-btn {
+  background-color: #f44336;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.6);
+  color: #fff;
+}
+.stop-btn:hover {
+  background-color: #da190b;
+}
+
+.reset-btn {
+  background-color: #2196f3;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.6);
+  color: #fff;
+}
+.reset-btn:hover {
+  background-color: #0b7dda;
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode timer buttons */
+body.dark .btn.start-btn {
+  background-color: #66bb6a;
+}
+body.dark .btn.start-btn:hover {
+  background-color: #45a049;
+}
+
+body.dark .btn.stop-btn {
+  background-color: #ef5350;
+}
+body.dark .btn.stop-btn:hover {
+  background-color: #da190b;
+}
+
+body.dark .btn.reset-btn {
+  background-color: #42a5f5;
+}
+body.dark .btn.reset-btn:hover {
+  background-color: #0b7dda;
+}
+
+body.dark .btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Error messages */
+.error {
+  font-size: 1.2rem;
+  color: red;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* MOBILE / TABLET RESPONSIVE */
+@media (max-width: 768px) {
+
+  .app-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0px;
+  height: 30px;
+}
+
+  .dashboard-content {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    height: 100vh; /* let it grow naturally */
+  }
+
+  .weather-section,
+  .timer-section {
+    flex: none; /* remove side-by-side flex */
+    width: 100%;
+    height: auto;
+  }
+
+  /* Temperature container smaller height on top */
+  .temperature-container {
+    height: 30vh; /* less height for weather on top */
+    padding: 20px;
+  }
+
+  /* Timer container larger height on bottom */
+  .timer-container {
+    height: 55vh; /* more height for timer */
+    padding: 20px;
+  }
+
+  /* Adjust font sizes */
+  .temperature-value {
+    font-size: 1.5rem;
+  }
+
+  .timer-display {
+    font-size: 3.5rem;
+  }
+
+  .aqi-value {
+    font-size: 0.9rem;
+  }
+
+  .aqi-description {
+    font-size: 0.7rem;
+  }
+
+  .theme-toggle-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .timer-buttons .btn {
+    padding: 10px 15px;
+    font-size: 1.2rem;
+  }
+
+  .weather-icon {
+    font-size: 3rem;
+  }
+}
