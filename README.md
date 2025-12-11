@@ -1,3 +1,6 @@
+## 🚀 Live Website  
+🔗 https://timer-weather-app.netlify.app/
+
 # weather-timer-app
 A modern, responsive React web application that displays live weather, current AQI (Air Quality Index), and includes a built-in timer. The UI supports Light / Dark mode, adapts to mobile layouts, and offers a clean dashboard-style interface.
 
