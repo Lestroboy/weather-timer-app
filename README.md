@@ -49,8 +49,3 @@ src/
 │   └── DarkModeToggle.css
 └── App.jsx
 ```
-
-## License
-
-MIT License
-
