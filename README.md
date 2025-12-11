@@ -1,16 +1,56 @@
-# React + Vite
+# weather-timer-app
+A modern, responsive React web application that displays live weather, current AQI (Air Quality Index), and includes a built-in timer. The UI supports Light / Dark mode, adapts to mobile layouts, and offers a clean dashboard-style interface.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
+- Detects location using Geolocation  
+- Fetches live weather and AQI from OpenWeather API  
+- Displays:
+  - Temperature (°C)  
+  - Weather condition icon (sun, clouds, rain, etc.)  
+  - AQI (1–5) with category (Good → Very Poor) and health description  
+- Auto-refresh every 10 minutes  
+- Simple timer with Start / Stop / Reset  
+- Light / Dark mode toggle — theme preference saved in `localStorage`  
+- Responsive layout:
+  - Desktop: weather on left, timer on right  
+  - Mobile: weather on top, timer below  
 
-Currently, two official plugins are available:
+## Tech Stack
+- React (functional components + hooks)  
+- CSS for styling and responsive layout  
+- OpenWeather API for weather & AQI data  
+- Browser Geolocation API  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Setup & Run
+1. Clone the repository  
+2. Install dependencies:
+   ```bash
+   npm install
+   ```  
+3. Add your OpenWeather API key in the code  
+4. Run the app:
+   ```bash
+   npm run dev
+   ```
 
-## React Compiler
+## Project Structure
+```
+src/
+├── components/
+│   ├── Temperature.jsx
+│   ├── WeatherIcon.jsx
+│   ├── Timer.jsx
+│   └── DarkModeToggle.jsx
+├── styles/
+│   ├── global.css (optional)
+│   ├── Temperature.css
+│   ├── Timer.css
+│   ├── WeatherIcon.css
+│   └── DarkModeToggle.css
+└── App.jsx
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## License
 
-## Expanding the ESLint configuration
+MIT License
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
